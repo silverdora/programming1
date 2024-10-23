@@ -4,9 +4,9 @@ namespace assignment5
 	public class Machine
 	{
         //fields
-        private int _numberOfWorkingHours;
+        private int _numberOfWorkingHours; //backing field
         //properties
-        public string Name { get; }
+        public string Name { get; private set; } //read-only
 		
 		private string needOfMaintance;
 
@@ -16,7 +16,7 @@ namespace assignment5
 			{ return _numberOfWorkingHours; }
 			set
 			{
-				if (_numberOfWorkingHours > 0)
+				if (value >= 0)
 
 				{
 					_numberOfWorkingHours = value;
@@ -28,18 +28,15 @@ namespace assignment5
 		{
 			get
 			{
-				if (NumberOfWorkingHours >= 10000)
-					return true;
-				else
-					return false;
+				return (NumberOfWorkingHours >= 10000);
 			}
 		}
 
         //constructor
         public Machine(string name, int numberOfWorkingHours)
 		{
-			this.Name = name;
-			this._numberOfWorkingHours = numberOfWorkingHours;
+			Name = name;
+			NumberOfWorkingHours = numberOfWorkingHours;
 		}
 
 		//methods

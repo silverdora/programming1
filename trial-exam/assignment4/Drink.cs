@@ -7,7 +7,7 @@ namespace assignment4
 		public string Name;
 		public double Price;
 		public bool IsAlcoholic;
-		string alco;
+		
 
         //constructor
         public Drink(string name, double price, bool isAlcoholic)
@@ -20,7 +20,8 @@ namespace assignment4
         //methods
         public string GetDescription()
 		{
-			if (IsAlcoholic)
+            string alco;
+            if (IsAlcoholic)
 			{
 				alco = "Alcoholic";
 			}
